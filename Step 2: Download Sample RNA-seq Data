@@ -1,0 +1,8 @@
+# Step 2: Download Sample RNA-seq Data
+# Download a paired-end RNA-seq dataset from E. coli (SRA accession: SRR519926)
+
+# Install SRA Toolkit
+conda install -c bioconda sra-tools -y
+
+# Download paired-end FASTQ files
+fasterq-dump SRR519926 --split-files -O .
