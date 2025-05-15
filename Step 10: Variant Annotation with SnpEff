@@ -1,0 +1,8 @@
+# Step 10: Variant Annotation with SnpEff
+# Annotate variants to predict their functional impact.
+
+# Download SnpEff database for E. coli
+snpeff download NC_000913.3
+
+# Annotate variants
+snpeff ann NC_000913.3 variants.vcf > annotated_variants.vcf
