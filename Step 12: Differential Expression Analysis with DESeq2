@@ -1,0 +1,38 @@
+# Step 12: Differential Expression Analysis with DESeq2
+# Perform differential expression analysis using a Python script with PyDESeq2. This example uses mock data for a single sample; for real analysis, include multiple samples.
+
+# Create a Python script for DESeq2 analysis
+cat > deseq2_analysis.py << EOL
+import pandas as pd
+from pydeseq2 import DeseqDataSet, DeseqStats
+
+# Mock count data (replace with real data for multiple samples)
+counts = pd.DataFrame({
+    'sample1': [100, 200, 50, 300, 10],
+    'sample2': [120, 180, 60, 320, 12]
+}, index=['gene1', 'gene2', 'gene3', 'gene4', 'gene5'])
+
+# Mock metadata
+metadata = pd.DataFrame({
+    'sample': ['sample1', 'sample2'],
+    'condition': ['control', 'treated']
+}, index=['sample1', 'sample2'])
+
+# Run DESeq2
+dds = DeseqDataSet(
+    counts=counts,
+    metadata=metadata,
+    design_factors='condition'
+)
+dds.deseq2()
+
+# Statistical analysis
+stat_res = DeseqStats(dds)
+stat_res.summary()
+
+# Save results
+stat_res.results_df.to_csv('deseq2_results.csv')
+EOL
+
+# Run the script
+python deseq2_analysis.py
