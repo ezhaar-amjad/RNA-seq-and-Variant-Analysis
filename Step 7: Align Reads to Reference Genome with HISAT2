@@ -1,0 +1,5 @@
+# Step 7: Align Reads to Reference Genome with HISAT2
+# Align trimmed reads to the E. coli genome.
+
+# Align paired-end reads
+hisat2 -x ecoli_index -1 SRR519926_1_trimmed.fastq -2 SRR519926_2_trimmed.fastq -S aligned_reads.sam -p 1
