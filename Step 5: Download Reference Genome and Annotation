@@ -1,0 +1,12 @@
+# Step 5: Download Reference Genome and Annotation
+# Download the E. coli reference genome and annotation for alignment, variant calling, and expression analysis.
+
+# Download E. coli K-12 MG1655 genome and annotation
+wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/005/845/GCF_000005845.2_ASM584v2/GCF_000005845.2_ASM584v2_genomic.fna.gz
+wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/005/845/GCF_000005845.2_ASM584v2/GCF_000005845.2_ASM584v2_genomic.gff.gz
+gunzip GCF_000005845.2_ASM584v2_genomic.fna.gz
+gunzip GCF_000005845.2_ASM584v2_genomic.gff.gz
+
+# Rename for convenience
+mv GCF_000005845.2_ASM584v2_genomic.fna ecoli_genome.fna
+mv GCF_000005845.2_ASM584v2_genomic.gff ecoli_annotation.gff
