@@ -1,2 +1,2 @@
-# RNA-seq-and-Variant-Analysis
+# RNA-seq and Variant Analysis
 This project outlines a complete RNA-seq data analysis pipeline for a paired-end E. coli dataset, including quality control, read alignment, variant calling, variant annotation, gene expression quantification, differential expression analysis, and visualization. The workflow uses tools like FastQC, Trimmomatic, HISAT2, SAMtools, BCFtools, SnpEff, StringTie, DESeq2, and IGV.
