@@ -1,0 +1,5 @@
+# Step 11: Quantify Gene Expression with StringTie
+# Estimate gene expression levels using the sorted BAM file and annotation.
+
+# Run StringTie for gene expression quantification
+stringtie sorted_reads.bam -G ecoli_annotation.gff -o expression.gtf -e -p 1
