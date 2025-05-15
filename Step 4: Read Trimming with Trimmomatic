@@ -1,0 +1,8 @@
+# Step 4: Read Trimming with Trimmomatic
+# Trim low-quality bases and adapters to improve alignment quality.
+
+# Run Trimmomatic for paired-end reads
+trimmomatic PE -phred33 SRR519926_1.fastq SRR519926_2.fastq \
+    SRR519926_1_trimmed.fastq SRR519926_1_unpaired.fastq \
+    SRR519926_2_trimmed.fastq SRR519926_2_unpaired.fastq \
+    ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
