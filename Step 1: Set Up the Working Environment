@@ -1,0 +1,20 @@
+# Step 1: Set Up the Working Environment
+# Create a project directory and install essential tools using Conda for isolated dependency management.
+
+# Create project directory
+mkdir ngs_project
+cd ngs_project
+
+# Update package list and install system prerequisites
+sudo apt update
+sudo apt install -y wget curl build-essential zlib1g-dev libbz2-dev liblzma-dev libncurses5-dev libncursesw5-dev unzip openjdk-11-jre htop
+
+# Install Conda (lightweight package manager)
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/miniconda
+$HOME/miniconda/bin/conda init
+source ~/.bashrc
+
+# Create a Conda environment for NGS tools
+conda create -n ngs_env -c bioconda -c conda-forge fastqc trimmomatic hisat2 samtools bcftools snpeff stringtie pydeseq2 igv python=3.8 -y
+conda activate ngs_env
