@@ -1,0 +1,8 @@
+# Step 13: Visualize Alignments and Variants with IGV
+# Use IGV to visualize aligned reads and variants.
+
+# Create IGV-compatible genome index
+samtools faidx ecoli_genome.fna
+
+# Start IGV (requires X11; ensure a graphical environment)
+igv &
