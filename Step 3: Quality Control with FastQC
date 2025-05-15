@@ -1,0 +1,6 @@
+# Step 3: Quality Control with FastQC
+# Assess the quality of raw sequencing reads.
+
+# Run FastQC on both FASTQ files
+mkdir fastqc_results
+fastqc SRR519926_1.fastq SRR519926_2.fastq -o fastqc_results
