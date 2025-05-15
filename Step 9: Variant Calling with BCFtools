@@ -1,0 +1,6 @@
+# Step 9: Variant Calling with BCFtools
+# Call variants (SNPs and indels) from the aligned reads.
+
+# Generate pileup and call variants
+samtools mpileup -f ecoli_genome.fna sorted_reads.bam > pileup.bcf
+bcftools call -mv -Ov -o variants.vcf pileup.bcf
